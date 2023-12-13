@@ -1,7 +1,7 @@
 export default {
     root: 'src/',
     publicDir: '../static/',
-    base: './',
+    base: '/basics-three.js/',
     server:
     {
         host: true, // Open to local network and display URL
