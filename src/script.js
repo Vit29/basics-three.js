@@ -13,7 +13,6 @@ const gui = new GUI()
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
-
 // Scene
 const scene = new THREE.Scene()
 
@@ -25,17 +24,17 @@ const axesHelper = new THREE.AxesHelper()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-const matcapTexture = textureLoader.load('/textures/matcaps/8.png')
+const matcapTexture = textureLoader.load('./textures/matcaps/8.png')
 
 // const mapcapTexture =  new THREE.SRGBColorSpace()
 // mapcapTexture.colorSapce = mapcapTexture
 
 // TEXTO 3D
-const fontLoader = new FontLoader()
 let text
 let textTwo
+const fontLoader = new FontLoader()
 fontLoader.load(
-    '/fonts/helvetiker_regular.typeface.json', 
+    './fonts/helvetiker_regular.typeface.json', 
     (font)=> 
     {
         const textGeometry = new TextGeometry(
@@ -179,7 +178,7 @@ console.log(donutsArray);
 
 
 const rgbeLoader = new RGBELoader()
-rgbeLoader.load('/environmentMap/2k.hdr', (environmentMap) => 
+rgbeLoader.load('./environmentMap/2k.hdr', (environmentMap) => 
     {
         environmentMap.mapping = THREE.EquirectangularReflectionMapping
         scene.environment = environmentMap
